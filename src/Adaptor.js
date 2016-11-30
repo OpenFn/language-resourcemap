@@ -14,7 +14,7 @@ import {
 
 /**
  * Execute a sequence of operations.
- * Wraps `language-common/execute`, and prepends initial state for DHIS2.
+ * Wraps `language-common/execute`, and prepends initial state for resourcemap.
  * @example
  * execute(
  *   create('foo'),
@@ -123,7 +123,7 @@ export function dataValueSet(data) {
 }
 
 /**
- * Create a "dataElement" pairing for DHIS2.
+ * Create a "dataElement" pairing for resourcemap.
  * @example
  * execute(
  *   dataElement(key, value)

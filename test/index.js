@@ -54,7 +54,7 @@ describe("event", () => {
       configuration: {
         username: "hello",
         password: "there",
-        apiUrl: 'https://play.dhis2.org/demo'
+        apiUrl: 'https://play.resourcemap.org/demo'
       }
     };
 

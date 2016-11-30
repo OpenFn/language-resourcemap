@@ -1,7 +1,7 @@
 {
-  "name": "language-dhis2",
+  "name": "language-resourcemap",
   "version": "0.0.3",
-  "description": "DHIS2 Language Pack for OpenFn",
+  "description": "resourcemap Language Pack for OpenFn",
   "main": "lib/index.js",
   "scripts": {
     "build": "make",

@@ -16,11 +16,11 @@ describe("Client", () => {
 
   describe("post", () => {
 
-    it("sends a payload to DHIS2", () => {
+    it("sends a payload to resourcemap", () => {
       let body = fixtures.event.requestBody;
       let username = 'admin';
       let password = 'district';
-      let url = 'https://play.dhis2.org/demo/api/events';
+      let url = 'https://play.resourcemap.org/demo/api/events';
 
       return post({ body, username, password, url }).then((result) => {
         expect(result.body).to.eql(fixtures.event.responseBody)
