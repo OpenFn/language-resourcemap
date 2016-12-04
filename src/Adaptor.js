@@ -40,24 +40,51 @@ export function execute(...operations) {
  * @param {object} eventData - Payload data for the event
  * @returns {Operation}
  */
-export function submitSite(siteData) {
+export function submitSite(collection_id, submissionData) {
+
+  function assembleError({ response, error }) {
+    if ([200,201,202].indexOf(response.statusCode) > -1) return false;
+    if (error) return error;
+    return new Error(`Server responded with ${response.statusCode} \n ${response.body}`)
+  }
 
   return state => {
-    const body = expandReferences(siteData)(state);
 
-    const collection_id = body.collection_id
+    const body = expandReferences(submissionData)(state);
+    console.log("Submitting site to collection " + collection_id + ":" +
+                "\n" + JSON.stringify(body, null, 4)
+              );
 
     const {
       username,
       password,
-      hostUrl
+      baseUrl
     } = state.configuration;
 
     // /api/collections/:collection_id/sites.json
-    const url = resolveUrl(hostUrl + '/', 'api/collections/' + collection_id + "/sites.json")
+    const url = resolveUrl(baseUrl + '/', 'api/collections/' + collection_id + "/sites.json")
 
-    console.log("Submitting site:");
-    console.log(body)
+    return new Promise((resolve, reject) => {
+      request.post ({
+        url: url,
+        json: body,
+        auth: {
+          'user': username,
+          'pass': password,
+          'sendImmediately': true
+        }
+      }, function(error, response, body){
+        error = assembleError({error, response})
+        if(error) {
+          reject(error);
+        } else {
+          console.log("Printing response...\n");
+          console.log(JSON.stringify(response, null, 4) + "\n");
+          console.log("Site submission succeeded.");
+          resolve(body);
+        }
+      })
+    })
 
     return request.post({
         username,
@@ -65,12 +92,7 @@ export function submitSite(siteData) {
         body,
         url
       })
-      .then((result) => {
-        console.log("Success:", result);
-        return {...state,
-          references: [result, ...state.references]
-        }
-      })
+
 
   }
 }

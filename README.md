@@ -22,9 +22,9 @@ ResourceMap uses Basic Auth.
 
 Expressions
 -----------
-
+`/api/collections/:collection_id/sites.json`
 ```js
-createSite({siteData})
+submitSite({siteData})
 ```
 
 Development
