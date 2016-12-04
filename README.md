@@ -9,6 +9,24 @@ Documentation
 
 We are working towards this to start: https://github.com/instedd/resourcemap/wiki/REST_API#create-site
 
+Config
+------
+ResourceMap uses Basic Auth.
+```json
+{
+  "baseUrl": "http://some-site-of-yours.com:8080"
+  "username": "blah",
+  "password": "shhh"
+}
+```
+
+Expressions
+-----------
+
+```js
+createSite({siteData})
+```
+
 Development
 -----------
 
