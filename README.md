@@ -22,9 +22,19 @@ ResourceMap uses Basic Auth.
 
 Expressions
 -----------
-`/api/collections/:collection_id/sites.json`
+
+## `submitSite(collectionId, fields)`
 ```js
-submitSite({siteData})
+submitSite(303, fields(
+  field("name", "Paris"),
+  field("lat", 48.86),
+  field("lon", 2.35),
+  field("properties", fields(
+    field("Comment", "sample text value"),
+    field("phone", "85512345678")
+  ))
+))
+
 ```
 
 Development

@@ -52,7 +52,7 @@ export function submitSite(collection_id, submissionData) {
 
     const body = expandReferences(submissionData)(state);
     console.log("Submitting site to collection " + collection_id + ":" +
-                "\n" + JSON.stringify(body, null, 4)
+                "\n" + JSON.stringify(body, null, 4) + "\n"
               );
 
     const {
@@ -72,6 +72,9 @@ export function submitSite(collection_id, submissionData) {
           'user': username,
           'pass': password,
           'sendImmediately': true
+        },
+        headers: {
+          "content-disposition": "form-data; name=\\\"site\\\""
         }
       }, function(error, response, body){
         error = assembleError({error, response})
