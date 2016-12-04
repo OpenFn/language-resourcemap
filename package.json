@@ -1,7 +1,7 @@
 {
   "name": "language-resourcemap",
-  "version": "0.0.3",
-  "description": "resourcemap Language Pack for OpenFn",
+  "version": "0.1.0",
+  "description": "Resourcemap Language Pack for OpenFn",
   "main": "lib/index.js",
   "scripts": {
     "build": "make",
@@ -14,10 +14,8 @@
     "lib/"
   ],
   "dependencies": {
-    "JSONPath": "^0.10.0",
     "language-common": "github:openfn/language-common",
-    "lodash-fp": "^0.10.2",
-    "superagent": "^1.7.2"
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "assertion-error": "^1.0.1",
