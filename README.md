@@ -26,15 +26,16 @@ Expressions
 ## `submitSite(collectionId, fields)`
 ```js
 submitSite(303, fields(
-  field("name", "Paris"),
+  field("name", dataValue("sampleText")),
   field("lat", 48.86),
   field("lon", 2.35),
-  field("properties", fields(
-    field("Comment", "sample text value"),
-    field("phone", "85512345678")
-  ))
+  field("properties", function(state){
+    return {
+      "Comment": state.data.sampleText,
+      "phone": "85512345678"
+    }
+  })
 ))
-
 ```
 
 Development
