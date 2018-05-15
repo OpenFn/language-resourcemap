@@ -1,5 +1,5 @@
-Language ResourceMap
-==============
+Language ResourceMap [![Build Status](https://travis-ci.org/OpenFn/language-resourcemap.svg?branch=master)](https://travis-ci.org/OpenFn/language-resourcemap)
+====================
 
 Language Pack for building expressions and operations for working with
 the [resourcemap API](https://github.com/instedd/resourcemap/wiki/REST_API).
