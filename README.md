@@ -14,7 +14,7 @@ Config
 ResourceMap uses Basic Auth.
 ```json
 {
-  "baseUrl": "http://some-site-of-yours.com:8080"
+  "baseUrl": "http://some-site-of-yours.com:8080",
   "username": "blah",
   "password": "shhh"
 }
