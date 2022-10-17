@@ -9,7 +9,7 @@ Documentation
 
 We are working towards this to start: https://github.com/instedd/resourcemap/wiki/REST_API#create-site
 
-Config
+Sample configuration
 ------
 ResourceMap uses Basic Auth.
 ```json
